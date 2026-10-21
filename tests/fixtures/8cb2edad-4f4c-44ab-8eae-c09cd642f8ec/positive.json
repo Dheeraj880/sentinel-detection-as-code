@@ -1,0 +1,7 @@
+{"SigninLogs": [
+  {"TimeGenerated":"2026-10-01T10:00:00Z","UserPrincipalName":"alice@lab.onmicrosoft.com","IPAddress":"203.0.113.50","ResultType":"50126","AppDisplayName":"Azure Portal","ClientAppUsed":"Browser","Location":"NL"},
+  {"TimeGenerated":"2026-10-01T10:04:00Z","UserPrincipalName":"bob@lab.onmicrosoft.com","IPAddress":"203.0.113.50","ResultType":"50126","AppDisplayName":"Azure Portal","ClientAppUsed":"Browser","Location":"NL"},
+  {"TimeGenerated":"2026-10-01T10:08:00Z","UserPrincipalName":"carol@lab.onmicrosoft.com","IPAddress":"203.0.113.50","ResultType":"50126","AppDisplayName":"Azure Portal","ClientAppUsed":"Browser","Location":"NL"},
+  {"TimeGenerated":"2026-10-01T10:12:00Z","UserPrincipalName":"dave@lab.onmicrosoft.com","IPAddress":"203.0.113.50","ResultType":"50126","AppDisplayName":"Azure Portal","ClientAppUsed":"Browser","Location":"NL"},
+  {"TimeGenerated":"2026-10-01T10:16:00Z","UserPrincipalName":"erin@lab.onmicrosoft.com","IPAddress":"203.0.113.50","ResultType":"50126","AppDisplayName":"Azure Portal","ClientAppUsed":"Browser","Location":"NL"}
+]}
