@@ -1,0 +1,15 @@
+title: Sign-in Using Legacy Authentication Protocol
+id: eb30d195-3402-44ca-99b0-f25242358f3e
+status: test
+level: medium
+description: Sign-ins through legacy protocols (IMAP, POP3, SMTP AUTH, ActiveSync, etc.) that cannot enforce MFA and are commonly used to bypass it with stolen passwords.
+author: Dheeraj Shaik
+tags:
+  - attack.initial-access
+  - attack.t1078.004
+  - attack.defense-evasion
+query: |
+  let LegacyClients = dynamic(["Exchange ActiveSync", "IMAP4", "POP3", "Authenticated SMTP", "SMTP", "MAPI Over HTTP", "Outlook Anywhere (RPC over HTTP)", "Exchange Web Services", "AutoDiscover", "Offline Address Book", "Other clients"]);
+  SigninLogs
+  | where ClientAppUsed in (LegacyClients)
+  | project TimeGenerated, UserPrincipalName, IPAddress, ClientAppUsed, ResultType, Location

@@ -1,0 +1,20 @@
+title: Impossible Travel - Successful Sign-ins From Two Countries Within One Hour
+id: c3fe0daa-8955-4f93-a48b-c634e601c35d
+status: test
+level: medium
+description: Same user signs in successfully from two different countries less than an hour apart. Simplified country-hop version; production rules compute geo distance and speed.
+author: Dheeraj Shaik
+tags:
+  - attack.initial-access
+  - attack.t1078.004
+query: |
+  SigninLogs
+  | where ResultType == "0" and isnotempty(Location)
+  | project UserPrincipalName, TimeGenerated, Location, IPAddress
+  | join kind=inner (
+      SigninLogs
+      | where ResultType == "0" and isnotempty(Location)
+      | project UserPrincipalName, SecondTime = TimeGenerated, SecondLocation = Location, SecondIP = IPAddress
+    ) on UserPrincipalName
+  | where Location != SecondLocation and SecondTime > TimeGenerated and SecondTime - TimeGenerated <= 1h
+  | project UserPrincipalName, FirstTime = TimeGenerated, FirstLocation = Location, FirstIP = IPAddress, SecondTime, SecondLocation, SecondIP

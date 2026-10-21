@@ -1,0 +1,22 @@
+title: MFA Fatigue - Repeated MFA Failures Followed by Success
+id: 5880d739-1c36-4ab5-8f4d-6d2a102f19e7
+status: test
+level: high
+description: Five or more failed MFA attempts (ResultType 500121) for one user within an hour, followed by a successful sign-in within 30 minutes of the last failure.
+author: Dheeraj Shaik
+tags:
+  - attack.credential-access
+  - attack.t1621
+query: |
+  SigninLogs
+  | where ResultType == "500121"
+  | summarize MfaFailures = count(), FirstFailure = min(TimeGenerated), LastFailure = max(TimeGenerated)
+      by UserPrincipalName, bin(TimeGenerated, 1h)
+  | where MfaFailures >= 5
+  | join kind=inner (
+      SigninLogs
+      | where ResultType == "0"
+      | project UserPrincipalName, SuccessTime = TimeGenerated, SuccessIP = IPAddress
+    ) on UserPrincipalName
+  | where SuccessTime between (LastFailure .. LastFailure + 30m)
+  | project UserPrincipalName, MfaFailures, FirstFailure, LastFailure, SuccessTime, SuccessIP

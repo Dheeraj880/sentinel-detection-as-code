@@ -1,0 +1,4 @@
+{"SigninLogs": [
+  {"TimeGenerated":"2026-10-01T10:00:00Z","UserPrincipalName":"bob@lab.onmicrosoft.com","IPAddress":"198.51.100.40","ResultType":"0","ClientAppUsed":"Browser","Location":"US"},
+  {"TimeGenerated":"2026-10-01T10:05:00Z","UserPrincipalName":"carol@lab.onmicrosoft.com","IPAddress":"198.51.100.41","ResultType":"0","ClientAppUsed":"Mobile Apps and Desktop clients","Location":"US"}
+]}

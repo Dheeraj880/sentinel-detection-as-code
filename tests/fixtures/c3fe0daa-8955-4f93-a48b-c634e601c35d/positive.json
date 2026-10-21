@@ -1,0 +1,4 @@
+{"SigninLogs": [
+  {"TimeGenerated":"2026-10-01T10:00:00Z","UserPrincipalName":"alice@lab.onmicrosoft.com","IPAddress":"198.51.100.30","ResultType":"0","Location":"US"},
+  {"TimeGenerated":"2026-10-01T10:40:00Z","UserPrincipalName":"alice@lab.onmicrosoft.com","IPAddress":"203.0.113.80","ResultType":"0","Location":"BR"}
+]}

@@ -1,0 +1,18 @@
+{"SigninLogs": [
+  {"TimeGenerated":"2026-10-01T11:00:00Z","UserPrincipalName":"bob@lab.onmicrosoft.com","IPAddress":"203.0.113.71","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T11:02:00Z","UserPrincipalName":"bob@lab.onmicrosoft.com","IPAddress":"203.0.113.71","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T11:04:00Z","UserPrincipalName":"bob@lab.onmicrosoft.com","IPAddress":"203.0.113.71","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T11:06:00Z","UserPrincipalName":"bob@lab.onmicrosoft.com","IPAddress":"203.0.113.71","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T11:08:00Z","UserPrincipalName":"bob@lab.onmicrosoft.com","IPAddress":"203.0.113.71","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T11:10:00Z","UserPrincipalName":"bob@lab.onmicrosoft.com","IPAddress":"203.0.113.71","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T12:00:00Z","UserPrincipalName":"carol@lab.onmicrosoft.com","IPAddress":"198.51.100.20","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T12:01:00Z","UserPrincipalName":"carol@lab.onmicrosoft.com","IPAddress":"198.51.100.20","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T12:02:00Z","UserPrincipalName":"carol@lab.onmicrosoft.com","IPAddress":"198.51.100.20","ResultType":"0"},
+  {"TimeGenerated":"2026-10-01T13:00:00Z","UserPrincipalName":"dave@lab.onmicrosoft.com","IPAddress":"198.51.100.21","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T13:02:00Z","UserPrincipalName":"dave@lab.onmicrosoft.com","IPAddress":"198.51.100.21","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T13:04:00Z","UserPrincipalName":"dave@lab.onmicrosoft.com","IPAddress":"198.51.100.21","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T13:06:00Z","UserPrincipalName":"dave@lab.onmicrosoft.com","IPAddress":"198.51.100.21","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T13:08:00Z","UserPrincipalName":"dave@lab.onmicrosoft.com","IPAddress":"198.51.100.21","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T13:10:00Z","UserPrincipalName":"dave@lab.onmicrosoft.com","IPAddress":"198.51.100.21","ResultType":"500121"},
+  {"TimeGenerated":"2026-10-01T15:10:00Z","UserPrincipalName":"dave@lab.onmicrosoft.com","IPAddress":"198.51.100.21","ResultType":"0"}
+]}

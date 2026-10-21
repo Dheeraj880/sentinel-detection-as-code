@@ -1,0 +1,22 @@
+title: Brute Force Followed by Successful Sign-in
+id: 90c1274a-5e50-4d1a-9eb5-3d22ed664623
+status: test
+level: high
+description: Five or more failed password attempts for one user from one IP within 30 minutes, followed by a successful sign-in from the same IP within 30 minutes of the last failure.
+author: Dheeraj Shaik
+tags:
+  - attack.credential-access
+  - attack.t1110.001
+query: |
+  SigninLogs
+  | where ResultType == "50126"
+  | summarize Failures = count(), FirstFailure = min(TimeGenerated), LastFailure = max(TimeGenerated)
+      by UserPrincipalName, IPAddress, bin(TimeGenerated, 30m)
+  | where Failures >= 5
+  | join kind=inner (
+      SigninLogs
+      | where ResultType == "0"
+      | project UserPrincipalName, IPAddress, SuccessTime = TimeGenerated
+    ) on UserPrincipalName, IPAddress
+  | where SuccessTime between (LastFailure .. LastFailure + 30m)
+  | project UserPrincipalName, IPAddress, Failures, FirstFailure, LastFailure, SuccessTime

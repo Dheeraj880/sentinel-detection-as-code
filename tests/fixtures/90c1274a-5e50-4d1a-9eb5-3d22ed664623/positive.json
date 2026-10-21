@@ -1,0 +1,8 @@
+{"SigninLogs": [
+  {"TimeGenerated":"2026-10-01T10:00:00Z","UserPrincipalName":"alice@lab.onmicrosoft.com","IPAddress":"203.0.113.100","ResultType":"50126"},
+  {"TimeGenerated":"2026-10-01T10:02:00Z","UserPrincipalName":"alice@lab.onmicrosoft.com","IPAddress":"203.0.113.100","ResultType":"50126"},
+  {"TimeGenerated":"2026-10-01T10:04:00Z","UserPrincipalName":"alice@lab.onmicrosoft.com","IPAddress":"203.0.113.100","ResultType":"50126"},
+  {"TimeGenerated":"2026-10-01T10:06:00Z","UserPrincipalName":"alice@lab.onmicrosoft.com","IPAddress":"203.0.113.100","ResultType":"50126"},
+  {"TimeGenerated":"2026-10-01T10:08:00Z","UserPrincipalName":"alice@lab.onmicrosoft.com","IPAddress":"203.0.113.100","ResultType":"50126"},
+  {"TimeGenerated":"2026-10-01T10:10:00Z","UserPrincipalName":"alice@lab.onmicrosoft.com","IPAddress":"203.0.113.100","ResultType":"0"}
+]}
