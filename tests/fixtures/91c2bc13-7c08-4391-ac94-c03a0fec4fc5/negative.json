@@ -1,0 +1,10 @@
+{"DeviceProcessEvents": [
+  {"Timestamp":"2026-10-01T10:00:00Z","DeviceName":"lab-win11","AccountName":"user1",
+   "FileName":"rundll32.exe","FolderPath":"C:\\Windows\\System32\\rundll32.exe",
+   "ProcessCommandLine":"rundll32.exe shell32.dll,Control_RunDLL",
+   "InitiatingProcessFileName":"explorer.exe","InitiatingProcessCommandLine":"explorer.exe"},
+  {"Timestamp":"2026-10-01T10:05:00Z","DeviceName":"lab-win11","AccountName":"user1",
+   "FileName":"notepad.exe","FolderPath":"C:\\Windows\\System32\\notepad.exe",
+   "ProcessCommandLine":"notepad.exe C:\\notes\\comsvcs MiniDump research.txt",
+   "InitiatingProcessFileName":"explorer.exe","InitiatingProcessCommandLine":"explorer.exe"}
+]}

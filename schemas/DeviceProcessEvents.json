@@ -1,0 +1,3 @@
+{"Timestamp":"datetime","DeviceName":"string","AccountName":"string","FileName":"string",
+ "FolderPath":"string","ProcessCommandLine":"string","InitiatingProcessFileName":"string",
+ "InitiatingProcessCommandLine":"string"}

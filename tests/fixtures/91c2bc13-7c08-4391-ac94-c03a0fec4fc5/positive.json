@@ -1,0 +1,6 @@
+{"DeviceProcessEvents": [
+  {"Timestamp":"2026-10-01T10:00:00Z","DeviceName":"lab-win11","AccountName":"labadmin",
+   "FileName":"rundll32.exe","FolderPath":"C:\\Windows\\System32\\rundll32.exe",
+   "ProcessCommandLine":"rundll32.exe C:\\Windows\\System32\\comsvcs.dll, MiniDump 624 C:\\temp\\l.dmp full",
+   "InitiatingProcessFileName":"powershell.exe","InitiatingProcessCommandLine":"powershell.exe"}
+]}
