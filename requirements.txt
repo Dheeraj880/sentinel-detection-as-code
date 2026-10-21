@@ -1,5 +1,5 @@
 pysigma==1.5.1
 pysigma-backend-kusto==1.0.1
 pyyaml
-azure-kusto-data==<6.0.4>
+azure-kusto-data==6.0.4
 pytest
