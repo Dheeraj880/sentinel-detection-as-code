@@ -1,0 +1,8 @@
+{"DeviceProcessEvents": [
+  {"InitiatingProcessFolderPath":"C:\\Windows\\explorer.exe",
+   "FolderPath":"C:\\Windows\\System32\\cmd.exe",
+   "ProcessCommandLine":"cmd.exe"},
+  {"InitiatingProcessFolderPath":"C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE",
+   "FolderPath":"C:\\Windows\\System32\\splwow64.exe",
+   "ProcessCommandLine":"splwow64.exe 8192"}
+]}

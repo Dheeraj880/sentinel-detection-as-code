@@ -1,0 +1,30 @@
+title: Office Application Spawning a Shell or Script Host
+id: e88aee97-26c3-42c3-a579-6e5f447d5165
+status: test
+description: Detects Word, Excel, PowerPoint or Outlook starting cmd, PowerShell or a script host, typical of malicious macro documents.
+author: Dheeraj Shaik
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection_parent:
+    ParentImage|endswith:
+      - '\winword.exe'
+      - '\excel.exe'
+      - '\powerpnt.exe'
+      - '\outlook.exe'
+  selection_child:
+    Image|endswith:
+      - '\cmd.exe'
+      - '\powershell.exe'
+      - '\pwsh.exe'
+      - '\wscript.exe'
+      - '\cscript.exe'
+      - '\mshta.exe'
+  condition: all of selection_*
+falsepositives:
+  - Add-ins or macros that legitimately call scripts
+level: high
+tags:
+  - attack.execution
+  - attack.t1204.002

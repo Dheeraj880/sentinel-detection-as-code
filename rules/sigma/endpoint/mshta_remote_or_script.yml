@@ -1,0 +1,24 @@
+title: Mshta Executing Remote or Inline Script
+id: 8e2f749c-4be8-49b7-9a3b-d45eb35bb3ad
+status: test
+description: Detects mshta.exe loading an HTA from a URL or running inline JavaScript/VBScript, a common initial-access LOLBin.
+author: Dheeraj Shaik
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection_img:
+    Image|endswith: '\mshta.exe'
+  selection_cli:
+    CommandLine|contains:
+      - 'http://'
+      - 'https://'
+      - 'javascript:'
+      - 'vbscript:'
+  condition: all of selection_*
+falsepositives:
+  - Legacy line-of-business HTA apps hosted on internal web servers
+level: high
+tags:
+  - attack.defense-evasion
+  - attack.t1218.005

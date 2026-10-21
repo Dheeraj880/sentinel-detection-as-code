@@ -8,6 +8,8 @@ from detections import load_detections
 SCHEMAS = {p.stem: json.loads(p.read_text()) for p in pathlib.Path("schemas").glob("*.json")}
 CLIENT = KustoClient(KustoConnectionStringBuilder.with_no_authentication(
     os.environ.get("KUSTO_URL", "http://localhost:8080")))
+FIXTURES = pathlib.Path("tests/fixtures")
+DETECTIONS = load_detections()
 
 
 def literal(value, kql_type):
@@ -31,17 +33,28 @@ def as_datatable(table, rows):
     return f"let {table} = datatable({cols}) [\n{vals}\n];\n"
 
 
-CASES = [(d, kind) for d in load_detections() for kind in ("positive", "negative")]
+def fixture_files(det):
+    return sorted((FIXTURES / det["id"]).glob("*.json"))
 
 
-@pytest.mark.parametrize("det,kind", CASES, ids=[f"{d['title']}::{k}" for d, k in CASES])
-def test_detection(det, kind):
-    fixture = pathlib.Path("tests/fixtures") / det["id"] / f"{kind}.json"
-    assert fixture.exists(), f"missing fixture: {fixture}"
+@pytest.mark.parametrize("det", DETECTIONS, ids=[d["title"] for d in DETECTIONS])
+def test_rule_has_positive_and_negative(det):
+    names = [f.stem for f in fixture_files(det)]
+    assert any(n.startswith("positive") for n in names), f"no positive fixture for {det['title']} ({det['id']})"
+    assert any(n.startswith("negative") for n in names), f"no negative fixture for {det['title']} ({det['id']})"
+
+
+CASES = [(d, f) for d in DETECTIONS for f in fixture_files(d)]
+
+
+@pytest.mark.parametrize("det,fixture", CASES, ids=[f"{d['title']}::{f.stem}" for d, f in CASES])
+def test_detection(det, fixture):
     tables = json.loads(fixture.read_text())
     query = "".join(as_datatable(t, rows) for t, rows in tables.items()) + det["query"]
     rows = CLIENT.execute("NetDefaultDB", query).primary_results[0].rows
-    if kind == "positive":
-        assert len(rows) > 0, f"{det['title']} did not fire on positive fixture"
+    if fixture.stem.startswith("positive"):
+        assert len(rows) > 0, f"{det['title']} did not fire on {fixture.name}"
+    elif fixture.stem.startswith("negative"):
+        assert len(rows) == 0, f"{det['title']} fired on {fixture.name}: {rows}"
     else:
-        assert len(rows) == 0, f"{det['title']} fired on negative fixture: {rows}"
+        pytest.fail(f"fixture name must start with 'positive' or 'negative': {fixture}")

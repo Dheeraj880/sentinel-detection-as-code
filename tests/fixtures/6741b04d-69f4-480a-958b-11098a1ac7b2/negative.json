@@ -1,0 +1,4 @@
+{"DeviceProcessEvents": [
+  {"FolderPath":"C:\\Windows\\System32\\regsvr32.exe",
+   "ProcessCommandLine":"regsvr32.exe /s C:\\Windows\\System32\\vbscript.dll"}
+]}

@@ -1,0 +1,4 @@
+{"DeviceProcessEvents": [
+  {"FolderPath":"C:\\Windows\\System32\\wbem\\WMIC.exe",
+   "ProcessCommandLine":"wmic.exe shadowcopy delete"}
+]}

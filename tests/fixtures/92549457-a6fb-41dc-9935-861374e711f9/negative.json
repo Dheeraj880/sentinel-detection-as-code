@@ -1,0 +1,6 @@
+{"DeviceProcessEvents": [
+  {"FolderPath":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+   "ProcessCommandLine":"powershell.exe -File C:\\scripts\\backup.ps1"},
+  {"FolderPath":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+   "ProcessCommandLine":"powershell.exe Get-Content C:\\logs\\app.log -Encoding UTF8"}
+]}

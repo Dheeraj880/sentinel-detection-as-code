@@ -1,0 +1,6 @@
+{"DeviceProcessEvents": [
+  {"FolderPath":"C:\\Windows\\System32\\certutil.exe",
+   "ProcessCommandLine":"certutil.exe -hashfile C:\\Downloads\\tool.zip SHA256"},
+  {"FolderPath":"C:\\Windows\\System32\\certutil.exe",
+   "ProcessCommandLine":"certutil.exe -urlcache * delete"}
+]}

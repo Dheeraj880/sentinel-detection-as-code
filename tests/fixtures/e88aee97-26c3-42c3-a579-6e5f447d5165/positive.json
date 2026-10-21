@@ -1,0 +1,5 @@
+{"DeviceProcessEvents": [
+  {"InitiatingProcessFolderPath":"C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE",
+   "FolderPath":"C:\\Windows\\System32\\cmd.exe",
+   "ProcessCommandLine":"cmd.exe /c powershell -w hidden"}
+]}
