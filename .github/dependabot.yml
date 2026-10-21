@@ -10,6 +10,11 @@ updates:
   groups:
     python-dependencies:
       patterns: ["*"]
+  # pysigma-backend-kusto 1.0.1 requires pysigma<2.0.0.
+  # Hold major upgrades until the backend supports 2.x.
+  ignore:
+    - dependency-name: "pysigma"
+      update-types: ["version-update:semver-major"]
 
 # Keeps the commit-SHA pins on every GitHub Action up to date.
 - package-ecosystem: github-actions
