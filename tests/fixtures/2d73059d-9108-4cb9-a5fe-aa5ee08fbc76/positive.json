@@ -1,0 +1,5 @@
+{"AuditLogs": [
+  {"TimeGenerated":"2026-10-01T10:00:00Z","OperationName":"Consent to application","Result":"success",
+   "InitiatedBy":{"user":{"userPrincipalName":"alice@lab.onmicrosoft.com"}},
+   "TargetResources":[{"displayName":"Free PDF Converter Pro","type":"ServicePrincipal"}]}
+]}

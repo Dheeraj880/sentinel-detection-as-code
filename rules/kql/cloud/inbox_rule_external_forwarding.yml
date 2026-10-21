@@ -1,0 +1,17 @@
+title: Inbox Rule Forwarding Mail to an External Address
+id: 98267fc7-c6eb-4b15-880e-3906d69f4d40
+status: test
+level: high
+description: A mailbox rule was created or changed to forward or redirect mail to an address outside the user's own domain, a common business email compromise technique.
+author: Dheeraj Shaik
+tags:
+  - attack.collection
+  - attack.t1114.003
+query: |
+  OfficeActivity
+  | where Operation in ("New-InboxRule", "Set-InboxRule")
+  | mv-expand Param = parse_json(Parameters)
+  | where tostring(Param.Name) in ("ForwardTo", "RedirectTo", "ForwardAsAttachmentTo")
+  | extend ForwardTo = tostring(Param.Value), UserDomain = tostring(split(UserId, "@")[1])
+  | where isnotempty(ForwardTo) and not(ForwardTo endswith strcat("@", UserDomain))
+  | project TimeGenerated, UserId, ClientIP, Operation, ForwardTo

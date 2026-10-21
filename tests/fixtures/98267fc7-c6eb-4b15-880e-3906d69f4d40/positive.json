@@ -1,0 +1,4 @@
+{"OfficeActivity": [
+  {"TimeGenerated":"2026-10-01T10:00:00Z","Operation":"New-InboxRule","UserId":"alice@lab.onmicrosoft.com","ClientIP":"203.0.113.120",
+   "Parameters":"[{\"Name\":\"Name\",\"Value\":\"..\"},{\"Name\":\"ForwardTo\",\"Value\":\"collector@external-mail.example\"},{\"Name\":\"DeleteMessage\",\"Value\":\"True\"}]"}
+]}

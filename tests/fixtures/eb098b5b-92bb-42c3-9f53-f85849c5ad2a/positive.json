@@ -1,0 +1,6 @@
+{"AuditLogs": [
+  {"TimeGenerated":"2026-10-01T10:00:00Z","OperationName":"Add member to role","Result":"success",
+   "InitiatedBy":{"user":{"userPrincipalName":"compromised@lab.onmicrosoft.com"}},
+   "TargetResources":[{"userPrincipalName":"backdoor@lab.onmicrosoft.com","type":"User",
+     "modifiedProperties":[{"displayName":"Role.DisplayName","oldValue":"\"\"","newValue":"\"Global Administrator\""}]}]}
+]}

@@ -1,0 +1,14 @@
+title: User Consent Granted to an Application
+id: 2d73059d-9108-4cb9-a5fe-aa5ee08fbc76
+status: test
+level: medium
+description: A user granted an application consent to access their data. Consent phishing uses this to gain persistent access without needing the password.
+author: Dheeraj Shaik
+tags:
+  - attack.credential-access
+  - attack.t1528
+query: |
+  AuditLogs
+  | where OperationName == "Consent to application" and Result == "success"
+  | extend Actor = tostring(InitiatedBy.user.userPrincipalName), AppName = tostring(TargetResources[0].displayName)
+  | project TimeGenerated, Actor, AppName, OperationName

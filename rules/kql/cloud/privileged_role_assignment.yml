@@ -1,0 +1,21 @@
+title: Member Added to Privileged Entra ID Role
+id: eb098b5b-92bb-42c3-9f53-f85849c5ad2a
+status: test
+level: high
+description: A user was added to a highly privileged Entra ID directory role such as Global Administrator.
+author: Dheeraj Shaik
+tags:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098.003
+query: |
+  let PrivilegedRoles = dynamic(["Global Administrator", "Privileged Role Administrator", "Security Administrator", "Exchange Administrator", "Application Administrator", "Cloud Application Administrator", "User Administrator"]);
+  AuditLogs
+  | where OperationName == "Add member to role" and Result == "success"
+  | mv-expand TargetResource = TargetResources
+  | mv-expand ModProp = TargetResource.modifiedProperties
+  | where tostring(ModProp.displayName) == "Role.DisplayName"
+  | extend RoleName = trim(@'"', tostring(ModProp.newValue))
+  | where RoleName in (PrivilegedRoles)
+  | extend Actor = tostring(InitiatedBy.user.userPrincipalName), TargetUser = tostring(TargetResource.userPrincipalName)
+  | project TimeGenerated, Actor, TargetUser, RoleName

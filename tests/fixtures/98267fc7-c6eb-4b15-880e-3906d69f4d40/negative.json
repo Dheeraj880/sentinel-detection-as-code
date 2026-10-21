@@ -1,0 +1,6 @@
+{"OfficeActivity": [
+  {"TimeGenerated":"2026-10-01T10:00:00Z","Operation":"New-InboxRule","UserId":"bob@lab.onmicrosoft.com","ClientIP":"198.51.100.60",
+   "Parameters":"[{\"Name\":\"Name\",\"Value\":\"Vacation cover\"},{\"Name\":\"ForwardTo\",\"Value\":\"carol@lab.onmicrosoft.com\"}]"},
+  {"TimeGenerated":"2026-10-01T11:00:00Z","Operation":"New-InboxRule","UserId":"dave@lab.onmicrosoft.com","ClientIP":"198.51.100.61",
+   "Parameters":"[{\"Name\":\"Name\",\"Value\":\"Newsletters\"},{\"Name\":\"MoveToFolder\",\"Value\":\"Newsletters\"}]"}
+]}

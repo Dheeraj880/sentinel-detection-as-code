@@ -1,0 +1,5 @@
+{"AuditLogs": [
+  {"TimeGenerated":"2026-10-01T10:00:00Z","OperationName":"Add service principal credentials","Result":"success",
+   "InitiatedBy":{"user":{"userPrincipalName":"compromised@lab.onmicrosoft.com"}},
+   "TargetResources":[{"displayName":"Payroll Sync Service","type":"ServicePrincipal"}]}
+]}

@@ -1,0 +1,8 @@
+{"AuditLogs": [
+  {"TimeGenerated":"2026-10-01T10:00:00Z","OperationName":"Add service principal","Result":"success",
+   "InitiatedBy":{"user":{"userPrincipalName":"admin@lab.onmicrosoft.com"}},
+   "TargetResources":[{"displayName":"Internal HR Portal","type":"ServicePrincipal"}]},
+  {"TimeGenerated":"2026-10-01T11:00:00Z","OperationName":"Add service principal credentials","Result":"failure",
+   "InitiatedBy":{"user":{"userPrincipalName":"bob@lab.onmicrosoft.com"}},
+   "TargetResources":[{"displayName":"Payroll Sync Service","type":"ServicePrincipal"}]}
+]}

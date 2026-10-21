@@ -1,0 +1,14 @@
+{"AuditLogs": [
+  {"TimeGenerated":"2026-10-01T10:00:00Z","OperationName":"Add member to role","Result":"success",
+   "InitiatedBy":{"user":{"userPrincipalName":"admin@lab.onmicrosoft.com"}},
+   "TargetResources":[{"userPrincipalName":"newhire@lab.onmicrosoft.com","type":"User",
+     "modifiedProperties":[{"displayName":"Role.DisplayName","oldValue":"\"\"","newValue":"\"Reports Reader\""}]}]},
+  {"TimeGenerated":"2026-10-01T11:00:00Z","OperationName":"Add member to group","Result":"success",
+   "InitiatedBy":{"user":{"userPrincipalName":"admin@lab.onmicrosoft.com"}},
+   "TargetResources":[{"userPrincipalName":"newhire@lab.onmicrosoft.com","type":"User",
+     "modifiedProperties":[{"displayName":"Group.DisplayName","oldValue":"\"\"","newValue":"\"Global Administrator Fans\""}]}]},
+  {"TimeGenerated":"2026-10-01T12:00:00Z","OperationName":"Add member to role","Result":"failure",
+   "InitiatedBy":{"user":{"userPrincipalName":"bob@lab.onmicrosoft.com"}},
+   "TargetResources":[{"userPrincipalName":"bob@lab.onmicrosoft.com","type":"User",
+     "modifiedProperties":[{"displayName":"Role.DisplayName","oldValue":"\"\"","newValue":"\"Global Administrator\""}]}]}
+]}
