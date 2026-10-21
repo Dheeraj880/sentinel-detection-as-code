@@ -1,0 +1,44 @@
+name: detections
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      kusto:
+        image: mcr.microsoft.com/azuredataexplorer/kustainer-linux:latest
+        env:
+          ACCEPT_EULA: "Y"
+        ports:
+          - 8080:8080
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Wait for Kusto emulator
+        run: |
+          for i in $(seq 1 30); do
+            if curl -sf -X POST http://localhost:8080/v1/rest/mgmt \
+                 -H 'Content-Type: application/json' \
+                 -d '{"csl":".show cluster"}' > /dev/null; then
+              echo "Emulator ready"; exit 0
+            fi
+            echo "Waiting for emulator ($i/30)..."; sleep 5
+          done
+          echo "Emulator did not start"; exit 1
+      - name: Convert Sigma rules to KQL
+        run: python detections.py
+      - name: Run detection tests
+        run: pytest -v
