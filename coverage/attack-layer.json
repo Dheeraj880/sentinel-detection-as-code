@@ -1,0 +1,114 @@
+{
+  "name": "sentinel-detection-as-code coverage",
+  "domain": "enterprise-attack",
+  "description": "Techniques covered by detections in this repo. Score = number of detections.",
+  "versions": {
+    "layer": "4.5"
+  },
+  "techniques": [
+    {
+      "techniqueID": "T1003.001",
+      "score": 1,
+      "comment": "LSASS Memory Dump via comsvcs.dll MiniDump",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1027",
+      "score": 1,
+      "comment": "PowerShell Encoded Command Execution",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1059.001",
+      "score": 1,
+      "comment": "PowerShell Encoded Command Execution",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1078.004",
+      "score": 2,
+      "comment": "Impossible Travel - Successful Sign-ins From Two Countries Within One Hour; Sign-in Using Legacy Authentication Protocol",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1098.001",
+      "score": 1,
+      "comment": "Credentials Added to Application or Service Principal",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1098.003",
+      "score": 1,
+      "comment": "Member Added to Privileged Entra ID Role",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1105",
+      "score": 1,
+      "comment": "Certutil Used to Download a File",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1110.001",
+      "score": 1,
+      "comment": "Brute Force Followed by Successful Sign-in",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1110.003",
+      "score": 1,
+      "comment": "Password Spray Against Entra ID",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1114.003",
+      "score": 1,
+      "comment": "Inbox Rule Forwarding Mail to an External Address",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1204.002",
+      "score": 1,
+      "comment": "Office Application Spawning a Shell or Script Host",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1218.005",
+      "score": 1,
+      "comment": "Mshta Executing Remote or Inline Script",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1218.010",
+      "score": 1,
+      "comment": "Regsvr32 Squiblydoo Scriptlet Execution",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1490",
+      "score": 1,
+      "comment": "Volume Shadow Copy Deletion",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1528",
+      "score": 1,
+      "comment": "User Consent Granted to an Application",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1621",
+      "score": 1,
+      "comment": "MFA Fatigue - Repeated MFA Failures Followed by Success",
+      "enabled": true
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#d6f5d6",
+      "#2b8a3e"
+    ],
+    "minValue": 1,
+    "maxValue": 3
+  }
+}

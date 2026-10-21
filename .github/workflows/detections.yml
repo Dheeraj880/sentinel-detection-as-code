@@ -42,3 +42,7 @@ jobs:
         run: python detections.py
       - name: Run detection tests
         run: pytest -v
+      - name: Check ATT&CK coverage is up to date
+        run: |
+          python coverage.py
+          git diff --exit-code -- coverage/ || (echo "::error::Coverage files are stale. Run 'python coverage.py' and commit the result." && exit 1)
