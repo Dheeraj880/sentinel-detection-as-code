@@ -112,4 +112,3 @@ The [`detections`](.github/workflows/detections.yml) workflow starts the Kusto e
 ## Author
 
 Dheeraj Shaik
-Bunny
